@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contact - FIRAS Voyage</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo"><a href="index.html" style="text-decoration:none;color:inherit">FIRAS Voyage</a></div>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="destinations.html" class="nav-link">Destinations</a></li>
+                <li><a href="packages.html" class="nav-link">Packages</a></li>
+                <li><a href="contact.html" class="nav-link active">Contact</a></li>
+                <li><button class="nav-signin" onclick="openSignIn()">Sign In</button></li>
+                <li><button class="theme-toggle" onclick="toggleTheme()" title="Toggle dark/light mode">🌙</button></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="main-container">
+        <section id="contact" class="page active">
+            <div class="page-header">
+                <p class="section-subtitle">Get in Touch</p>
+                <h1 class="section-title">Contact Our Specialists</h1>
+                <div class="gold-line"></div>
+                <p class="page-description">Our luxury travel specialists are here to help create your perfect journey.</p>
+            </div>
+            <div class="contact-container">
+                <div class="contact-info">
+                    <div class="info-card"><div class="info-icon">📍</div><h3>Office Location</h3><p>Tunisia<br>Sousse,Sahloul</p></div>
+                    <div class="info-card"><div class="info-icon">📞</div><h3>Phone</h3><p>+216 50 557 048<br>Available 24/7</p></div>
+                    <div class="info-card"><div class="info-icon">✉️</div><h3>Email</h3><p>Firasinfo@gmail.com<br>Firasbookings@gmail.com</p></div>
+                    <div class="info-card"><div class="info-icon">🕐</div><h3>Business Hours</h3><p>Mon - Fri: 9AM - 8PM<br>Sat - Sun: 10AM - 6PM</p></div>
+                </div>
+                <div class="contact-form-container">
+                    <form class="contact-form" onsubmit="handleContactSubmit(event)">
+                        <div class="form-row">
+                            <input type="text" placeholder="Full Name" required>
+                            <input type="email" placeholder="Email Address" required>
+                        </div>
+                        <div class="form-row">
+                            <input type="tel" placeholder="Phone Number">
+                            <select required>
+                                <option value="">Select a destination</option>
+                                <option>Maldives</option><option>Swiss Alps</option>
+                                <option>Dubai</option><option>Bali</option>
+                                <option>Paris</option><option>Santorini</option>
+                                <option>Lebanon</option><option>Tunisia</option>
+                                <option>Custom Itinerary</option>
+                            </select>
+                        </div>
+                        <textarea placeholder="Tell us about your dream vacation..." rows="6" required></textarea>
+                        <button type="submit" class="btn btn-primary">Send Message</button>
+                    </form>
+                </div>
+            </div>
+            <div class="faq-section">
+                <h2>Frequently Asked Questions</h2>
+                <div class="faq-grid">
+                    <div class="faq-item"><h3>How far in advance should I book?</h3><p>We recommend booking 2-3 months in advance for the best availability and pricing.</p></div>
+                    <div class="faq-item"><h3>What payment methods do you accept?</h3><p>We accept all major credit cards, bank transfers, and cryptocurrency.</p></div>
+                    <div class="faq-item"><h3>Is travel insurance included?</h3><p>Travel insurance is available as an optional add-on. We recommend it for all international trips.</p></div>
+                    <div class="faq-item"><h3>Can I customize my package?</h3><p>Absolutely! All our packages can be customized to match your preferences and budget.</p></div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <div id="signInModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeSignIn()">&times;</span>
+            <h2>Welcome Back</h2>
+            <form onsubmit="handleSignIn(event)">
+                <input type="email" placeholder="Email Address" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit" class="btn btn-gold">Sign In</button>
+            </form>
+            <button class="btn btn-secondary" onclick="closeSignIn()">Cancel</button>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section"><h4>Company</h4><ul><li><a href="#">About Us</a></li><li><a href="#">Careers</a></li></ul></div>
+            <div class="footer-section"><h4>Services</h4><ul><li><a href="destinations.html">Destinations</a></li><li><a href="packages.html">Packages</a></li></ul></div>
+            <div class="footer-section"><h4>Support</h4><ul><li><a href="contact.html">Contact</a></li><li><a href="#">FAQ</a></li></ul></div>
+            <div class="footer-section"><h4>Follow Us</h4><ul><li><a href="#">Instagram</a></li><li><a href="#">Facebook</a></li></ul></div>
+        </div>
+        <div class="footer-bottom"><p>&copy; 2026 LuxeVoyage. All rights reserved.</p></div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>

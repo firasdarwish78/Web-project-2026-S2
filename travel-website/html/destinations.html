@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Destinations - FIRAS Voyage</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo"><a href="index.html" style="text-decoration:none;color:inherit">FIRAS Voyage</a></div>
+            <button class="mobile-menu-btn" onclick="toggleMobileMenu()">☰</button>
+            <ul class="nav-menu">
+                <li><a href="index.html" class="nav-link">Home</a></li>
+                <li><a href="destinations.html" class="nav-link active">Destinations</a></li>
+                <li><a href="packages.html" class="nav-link">Packages</a></li>
+                <li><a href="contact.html" class="nav-link">Contact</a></li>
+                <li><button class="nav-signin" onclick="openSignIn()">Sign In</button></li>
+                <li><button class="theme-toggle" onclick="toggleTheme()" title="Toggle dark/light mode">🌙</button></li>
+            </ul>
+        </div>
+    </nav>
+
+    <div class="main-container">
+        <section id="destinations" class="page active">
+            <div class="page-header">
+                <p class="section-subtitle">Explore the World</p>
+                <h1 class="section-title">Luxury Destinations</h1>
+                <div class="gold-line"></div>
+                <p class="page-description">Discover handpicked luxury destinations across the globe.</p>
+            </div>
+            <div class="filter-section">
+                <span>Filter by Region:</span>
+                <button class="filter-btn active" onclick="filterDestinations('all')">All</button>
+                <button class="filter-btn" onclick="filterDestinations('asia')">Asia</button>
+                <button class="filter-btn" onclick="filterDestinations('europe')">Europe</button>
+                <button class="filter-btn" onclick="filterDestinations('middle-east')">Middle East</button>
+                <button class="filter-btn" onclick="filterDestinations('africa')">Africa</button>
+            </div>
+            <div id="destinationsGrid" class="destinations-full-grid"></div>
+        </section>
+    </div>
+
+    <div id="signInModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeSignIn()">&times;</span>
+            <h2>Welcome Back</h2>
+            <form onsubmit="handleSignIn(event)">
+                <input type="email" placeholder="Email Address" required>
+                <input type="password" placeholder="Password" required>
+                <button type="submit" class="btn btn-gold">Sign In</button>
+            </form>
+            <button class="btn btn-secondary" onclick="closeSignIn()">Cancel</button>
+        </div>
+    </div>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section"><h4>Company</h4><ul><li><a href="#">About Us</a></li><li><a href="#">Careers</a></li></ul></div>
+            <div class="footer-section"><h4>Services</h4><ul><li><a href="destinations.html">Destinations</a></li><li><a href="packages.html">Packages</a></li></ul></div>
+            <div class="footer-section"><h4>Support</h4><ul><li><a href="contact.html">Contact</a></li><li><a href="#">FAQ</a></li></ul></div>
+            <div class="footer-section"><h4>Follow Us</h4><ul><li><a href="#">Instagram</a></li><li><a href="#">Facebook</a></li></ul></div>
+        </div>
+        <div class="footer-bottom"><p>&copy; 2026 LuxeVoyage. All rights reserved.</p></div>
+    </footer>
+
+    <script src="../js/main.js"></script>
+</body>
+</html>
