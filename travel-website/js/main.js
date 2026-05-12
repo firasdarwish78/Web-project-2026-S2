@@ -1,5 +1,4 @@
-
-const IMG_BASE = '../images/';
+const IMG_BASE = window.location.pathname.includes("/html/") ? "../images/" : "images/";
 
 const destinations = [
     {
@@ -139,20 +138,20 @@ const packages = [
     }
 ];
 
-// ========== STATE ==========
+//  STATE
 let currentFilter = {
     destinations: 'all',
     packages: 'all'
 };
 
-// ========== INITIALIZATION ==========
+// intialization
 document.addEventListener('DOMContentLoaded', function () {
     // Apply saved theme
     const savedTheme = localStorage.getItem('theme');
     if (savedTheme === 'dark') {
         document.body.classList.add('dark-mode');
         const btn = document.querySelector('.theme-toggle');
-        if (btn) btn.textContent = '☀️';
+        if (btn) btn.textContent = '🔆';
     }
 
     // Only render grids on pages that have them
@@ -175,7 +174,7 @@ document.addEventListener('DOMContentLoaded', function () {
     setupScrollAnimations();
 });
 
-// ========== PAGE NAVIGATION ==========
+// Page navigation function
 function showPage(pageId) {
     const map = {
         home: 'index.html',
@@ -186,7 +185,7 @@ function showPage(pageId) {
     if (map[pageId]) window.location.href = map[pageId];
 }
 
-// ========== SIGN IN MODAL ==========
+// Sign in function
 function openSignIn() {
     const modal = document.getElementById('signInModal');
     modal.classList.add('active');
@@ -207,7 +206,7 @@ function handleSignIn(event) {
     closeSignIn();
 }
 
-// Close modal when clicking outside
+// Close modal 
 window.addEventListener('click', function (event) {
     const modal = document.getElementById('signInModal');
     if (event.target === modal) {
@@ -215,18 +214,18 @@ window.addEventListener('click', function (event) {
     }
 });
 
-// ========== AGE VERIFICATION ==========
+// Age verification 
 function verifyAge(isAdult) {
     const modal = document.getElementById('ageModal');
     if (isAdult) {
         modal.classList.remove('active');
     } else {
         alert('Sorry, you must be 18 or older to access this site.');
-        window.location.href = 'https://www.google.com';
+        window.location.href = 'https://pbskids.org/games';
     }
 }
 
-// ========== DARK / LIGHT MODE ==========
+//Dark mode toggle
 function toggleTheme() {
     const isDark = document.body.classList.toggle('dark-mode');
     const btn = document.querySelector('.theme-toggle');
@@ -234,12 +233,12 @@ function toggleTheme() {
     localStorage.setItem('theme', isDark ? 'dark' : 'light');
 }
 
-// ========== DISCOUNT MODAL ==========
+// Discount modal function
 function closeDiscount() {
     document.getElementById('discountModal').classList.remove('active');
 }
 
-// ========== DESTINATIONS RENDERING ==========
+// Destinations rendering function
 function renderDestinations(filter) {
     const grid = document.getElementById('destinationsGrid');
     if (!grid) return;
@@ -269,7 +268,7 @@ function filterDestinations(filter) {
     renderDestinations(filter);
 }
 
-// ========== PACKAGES RENDERING ==========
+// Packages rendering function
 function renderPackages(filter) {
     const grid = document.getElementById('packagesGrid');
     if (!grid) return;
@@ -315,7 +314,7 @@ function filterPackages(filter) {
     renderPackages(filter);
 }
 
-// ========== FORM SUBMISSIONS ==========
+//Form submission
 function handleContactSubmit(event) {
     event.preventDefault();
     const form = event.target;
@@ -330,7 +329,7 @@ function handleNewsletterSubmit(event) {
     event.target.reset();
 }
 
-// ========== PARALLAX SCROLLING ==========
+// Parallax scrolling effect
 function setupParallaxScrolling() {
     window.addEventListener('scroll', function () {
         const scrolled = window.pageYOffset;
@@ -342,7 +341,7 @@ function setupParallaxScrolling() {
     });
 }
 
-// ========== SCROLL ANIMATIONS ==========
+// Scroll animations
 function setupScrollAnimations() {
     const observerOptions = {
         threshold: 0.1,
@@ -363,7 +362,7 @@ function setupScrollAnimations() {
     });
 }
 
-// ========== SMOOTH SCROLL ==========
+// Smooth scrolling
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     anchor.addEventListener('click', function (e) {
         const href = this.getAttribute('href');

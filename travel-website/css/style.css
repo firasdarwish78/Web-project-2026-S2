@@ -1,9 +1,3 @@
-/* ========================================
-   LUXEVOYAGE - LUXURY TRAVEL AGENCY
-   Modern Minimalist Luxury with Art Deco Accents
-   ======================================== */
-
-/* ========== ROOT VARIABLES ========== */
 :root {
     --primary-color: #1a1a1a;
     --gold-color: #d4af37;
@@ -1198,3 +1192,37 @@ body.dark-mode .discount-title { color: #f0ece0; }
 body.dark-mode .discount-desc { color: #aaa; }
 body.dark-mode .discount-code-box { background: rgba(212,175,55,0.06); color: #aaa; }
 body.dark-mode .discount-note { color: #666; }
+/* ========== HIDE MOBILE MENU BUTTON ON DESKTOP ========== */
+.mobile-menu-btn {
+    display: none;
+    background: transparent;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-dark);
+    padding: 0.25rem 0.5rem;
+}
+
+@media (max-width: 768px) {
+    .mobile-menu-btn {
+        display: block;
+    }
+    .nav-menu {
+        display: none;
+        flex-direction: column;
+        position: absolute;
+        top: 70px;
+        left: 0;
+        width: 100%;
+        background: var(--cream-color);
+        padding: 1rem;
+        box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+        z-index: 999;
+    }
+    .nav-menu.active {
+        display: flex;
+    }
+    body.dark-mode .nav-menu {
+        background: #1a1a1a;
+    }
+}
